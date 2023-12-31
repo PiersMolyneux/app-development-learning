@@ -1,4 +1,4 @@
-# swift-app-development-learning
+# app-development-learning
 
 
 # App Development Learning Journey
