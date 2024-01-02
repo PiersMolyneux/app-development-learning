@@ -17,6 +17,7 @@
 		41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77942B44673E0078A25A /* StatBubbleView.swift */; };
 		41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77962B446AFE0078A25A /* ProjectCardView.swift */; };
 		41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* AddProjectView.swift */; };
+		41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779B2B44A7960078A25A /* ProjectDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		41CB77942B44673E0078A25A /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatBubbleView.swift; path = ../../StatBubbleView.swift; sourceTree = "<group>"; };
 		41CB77962B446AFE0078A25A /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		41CB77982B447E8A0078A25A /* AddProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		41CB779B2B44A7960078A25A /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			children = (
 				41CB777B2B41901E0078A25A /* ProjectTrackerApp.swift */,
 				41CB77912B4466E50078A25A /* ProjectList */,
+				41CB779A2B44A77C0078A25A /* ProjectDetail */,
 				41CB77892B4191B20078A25A /* Models */,
 				41CB778E2B444F400078A25A /* Helpers */,
 				41CB777F2B4190200078A25A /* Assets.xcassets */,
@@ -107,6 +110,14 @@
 				41CB77982B447E8A0078A25A /* AddProjectView.swift */,
 			);
 			path = ProjectList;
+			sourceTree = "<group>";
+		};
+		41CB779A2B44A77C0078A25A /* ProjectDetail */ = {
+			isa = PBXGroup;
+			children = (
+				41CB779B2B44A7960078A25A /* ProjectDetailView.swift */,
+			);
+			path = ProjectDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 			files = (
 				41CB778D2B41923D0078A25A /* ProjectUpdate.swift in Sources */,
 				41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */,
+				41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */,
 				41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */,
 				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
