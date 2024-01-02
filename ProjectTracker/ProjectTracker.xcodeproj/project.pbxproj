@@ -16,6 +16,7 @@
 		41CB77902B444F640078A25A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB778F2B444F640078A25A /* FontHelper.swift */; };
 		41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77942B44673E0078A25A /* StatBubbleView.swift */; };
 		41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77962B446AFE0078A25A /* ProjectCardView.swift */; };
+		41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* AddProjectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		41CB778F2B444F640078A25A /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		41CB77942B44673E0078A25A /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatBubbleView.swift; path = ../../StatBubbleView.swift; sourceTree = "<group>"; };
 		41CB77962B446AFE0078A25A /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
+		41CB77982B447E8A0078A25A /* AddProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				41CB777D2B41901E0078A25A /* ProjectListView.swift */,
 				41CB77942B44673E0078A25A /* StatBubbleView.swift */,
 				41CB77962B446AFE0078A25A /* ProjectCardView.swift */,
+				41CB77982B447E8A0078A25A /* AddProjectView.swift */,
 			);
 			path = ProjectList;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				41CB778D2B41923D0078A25A /* ProjectUpdate.swift in Sources */,
 				41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */,
+				41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */,
 				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
 				41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */,
