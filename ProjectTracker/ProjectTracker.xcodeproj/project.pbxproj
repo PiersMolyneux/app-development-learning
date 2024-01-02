@@ -13,6 +13,7 @@
 		41CB77832B4190200078A25A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41CB77822B4190200078A25A /* Preview Assets.xcassets */; };
 		41CB778B2B4191E30078A25A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB778A2B4191E30078A25A /* Project.swift */; };
 		41CB778D2B41923D0078A25A /* ProjectUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB778C2B41923D0078A25A /* ProjectUpdate.swift */; };
+		41CB77902B444F640078A25A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB778F2B444F640078A25A /* FontHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		41CB77822B4190200078A25A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41CB778A2B4191E30078A25A /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		41CB778C2B41923D0078A25A /* ProjectUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUpdate.swift; sourceTree = "<group>"; };
+		41CB778F2B444F640078A25A /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				41CB777B2B41901E0078A25A /* ProjectTrackerApp.swift */,
 				41CB777D2B41901E0078A25A /* ProjectListView.swift */,
 				41CB77892B4191B20078A25A /* Models */,
+				41CB778E2B444F400078A25A /* Helpers */,
 				41CB777F2B4190200078A25A /* Assets.xcassets */,
 				41CB77812B4190200078A25A /* Preview Content */,
 			);
@@ -79,6 +82,14 @@
 				41CB778C2B41923D0078A25A /* ProjectUpdate.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		41CB778E2B444F400078A25A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				41CB778F2B444F640078A25A /* FontHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41CB778D2B41923D0078A25A /* ProjectUpdate.swift in Sources */,
+				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
 				41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */,
 				41CB778B2B4191E30078A25A /* Project.swift in Sources */,
