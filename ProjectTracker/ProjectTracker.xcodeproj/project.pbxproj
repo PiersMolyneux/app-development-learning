@@ -18,6 +18,7 @@
 		41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77962B446AFE0078A25A /* ProjectCardView.swift */; };
 		41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* AddProjectView.swift */; };
 		41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779B2B44A7960078A25A /* ProjectDetailView.swift */; };
+		41CB779E2B44B6380078A25A /* ProjectUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		41CB77962B446AFE0078A25A /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		41CB77982B447E8A0078A25A /* AddProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
 		41CB779B2B44A7960078A25A /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
+		41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUpdateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				41CB779B2B44A7960078A25A /* ProjectDetailView.swift */,
+				41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */,
 			);
 			path = ProjectDetail;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
 				41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */,
+				41CB779E2B44B6380078A25A /* ProjectUpdateView.swift in Sources */,
 				41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */,
 				41CB778B2B4191E30078A25A /* Project.swift in Sources */,
 			);
