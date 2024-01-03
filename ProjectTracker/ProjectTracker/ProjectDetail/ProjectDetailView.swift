@@ -12,6 +12,7 @@ struct ProjectDetailView: View {
     @Environment(\.dismiss) private var dismiss
     var project: Project
     @State private var update: ProjectUpdate? // state bc we need to change it, private as it does not need to be accessed by project list view
+    @State private var showEditFocus = false
     
     var body: some View {
         
@@ -45,10 +46,24 @@ struct ProjectDetailView: View {
                     }
                     Text("My current focus is...")
                         .font(.featuredText)
+
                     HStack {
-                        Image(systemName: "checkmark.square")
-                        Text("Design the new website")
+                        if (project.focus.trimmingCharacters(in: .whitespacesAndNewlines) != "") {
+                            Button {
+                                // Complete this milestone
+                                completeMilestone()
+                            } label: {
+                                Image(systemName: "checkmark.square")
+                            }
+                        }
+                        
+                        // If empty show default, otherwise show project focus
+                        Text(project.focus.trimmingCharacters(in: .whitespacesAndNewlines) == "" ? "Tap to set your focus" : project.focus)
                             .font(.featuredText)
+                            .onTapGesture {
+                                // Display the edit focus form
+                                showEditFocus = true
+                            }
                     }
                     .padding(.leading)
 
@@ -65,7 +80,9 @@ struct ProjectDetailView: View {
                 // Project updates
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 27) {
-                        ForEach(project.updates) { update in
+                        ForEach(project.updates.sorted(by: { u1, u2 in
+                            u1.date > u2.date
+                        })) { update in
                             ProjectUpdateView(update: update)
                         }
 
@@ -116,9 +133,22 @@ struct ProjectDetailView: View {
             AddUpdateView(project: project, update: update)
                 .presentationDetents([.fraction(0.3)])
         }
+        .sheet(isPresented: $showEditFocus, content: {
+            EditFocusView(project: project)
+                .presentationDetents([.fraction(0.2)])
+        })
     }
     
-    
+    func completeMilestone() {
+        // Create a new project update for milestone
+        let update = ProjectUpdate()
+        update.updateType = .milestone
+        update.headline = "Milestone achieved"
+        update.summary = project.focus
+        project.updates.insert(update, at: 0)
+        // Clear the project focus
+        project.focus = ""
+    }
 }
 
 //#Preview {
