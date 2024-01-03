@@ -15,6 +15,7 @@ struct ProjectDetailView: View {
     var project: Project
     @State private var newUpdate: ProjectUpdate? // state bc we need to change it, private as it does not need to be accessed by project list view
     @State private var showEditFocus = false
+    @State private var animationOffset = 200
     
     var body: some View {
         
@@ -83,13 +84,23 @@ struct ProjectDetailView: View {
                 if project.updates.count > 0 {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 27) {
-                            ForEach(project.updates.sorted(by: { u1, u2 in
+                            
+                            // This sortedArray is to produce a nice animation, it allows us to get an index
+                            let sortedArray = project.updates.sorted(by: { u1, u2 in
                                 u1.date > u2.date
-                            })) { update in
+                            })
+                            
+                            ForEach(Array(sortedArray.enumerated()), id: \.element) { index, update in
                                 ProjectUpdateView(update: update)
+                                    .offset(y: CGFloat(animationOffset)) // another animation/transition
+                                    // delay start of animation (animation comes from change in animationOffset value, not below
+                                    // .animation func
+                                    .animation(.easeOut.delay(TimeInterval(0.05) * Double(index)), value: animationOffset)
+                                
                                 // add ontap gesture so tap gets captured and screen knows we are scrolling, otherwise we cannot use scroll view
                                     .onTapGesture {
                                     }
+                                
                                 // edit project update by setting update to existing update so it knows there has been a changed
                                     .onLongPressGesture {
                                         newUpdate = update
@@ -168,7 +179,14 @@ struct ProjectDetailView: View {
             EditFocusView(project: project)
                 .presentationDetents([.fraction(0.2)])
         })
+        // Another animation/transition (same one above around line 91
+        .onAppear {
+            withAnimation {
+                animationOffset = 0
+            }
+        }
     }
+        
     
     func completeMilestone() {
         // Create a new project update for milestone

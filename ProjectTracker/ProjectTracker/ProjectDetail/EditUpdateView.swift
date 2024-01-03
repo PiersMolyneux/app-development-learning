@@ -60,18 +60,23 @@ struct EditUpdateView: View {
                         update.hours = Double(hours)! // force unwrap bc should be able to convert
                         // edit project update
                         if !isEditMode {
-                            // Add project update if not edit mode
-                            project.updates.insert(update, at: 0)
-                            
-                            // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
-                            try? context.save()
-                            StatHelper.updateAdded(project: project, update: update)
+                            // Add animation
+                            withAnimation {
+                                // Add project update if not edit mode
+                                project.updates.insert(update, at: 0)
+                                
+                                // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
+                                try? context.save()
+                                StatHelper.updateAdded(project: project, update: update)
+                            }
                         }
                         else {
-                            // edit project update
-                            
-                            // update stats
-                            StatHelper.updateEdited(project: project, hoursDifference: hoursDifference)
+                            // edit project update, with animation
+                            withAnimation {
+                                
+                                // update stats
+                                StatHelper.updateEdited(project: project, hoursDifference: hoursDifference)
+                            }
                         }
                         dismiss()
                         
@@ -103,14 +108,17 @@ struct EditUpdateView: View {
         }
         .confirmationDialog("Really delete the update?", isPresented: $showConfirmation) {
             Button("Yes, delete it") {
-                // Search for the update in update list by its id, remove all updates with same id (should be unique)
-                project.updates.removeAll { u in
-                    u.id == update.id
+                
+                withAnimation {
+                    // Search for the update in update list by its id, remove all updates with same id (should be unique)
+                    project.updates.removeAll { u in
+                        u.id == update.id
+                    }
+                    // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
+                    try? context.save()
+                    // Delete update
+                    StatHelper.updateDeleted(project: project, update: update)
                 }
-                // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
-                try? context.save()
-                // Delete update
-                StatHelper.updateDeleted(project: project, update: update)
                 dismiss()
             }
             

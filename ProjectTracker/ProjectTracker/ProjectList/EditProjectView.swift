@@ -44,9 +44,15 @@ struct EditProjectView: View {
                             project.name = projectName
                         }
                         else {
-                            // Add prtoject to SwiftData
-                            project.name = projectName
-                            context.insert(project)
+                            withAnimation {
+                                // Add prtoject to SwiftData
+                                project.name = projectName
+                                context.insert(project)
+                                
+                                // issue comes with animation due to saving the database (which we did to avoid updating bugs),
+                                // fix by putting this below
+                                try? context.save()
+                            }
                         }
                         dismiss() // dismisses sheet
                     }
@@ -73,8 +79,13 @@ struct EditProjectView: View {
         }
         .confirmationDialog("Really delete?", isPresented: $showConfirmation, titleVisibility: .visible) {
             Button("Yes, delete it") {
-                // Delete project from SwiftData
-                context.delete(project)
+                withAnimation {
+                    // Delete project from SwiftData
+                    context.delete(project)
+                    // issue comes with animation due to saving the database (which we did to avoid updating bugs),
+                    // fix by putting this below
+                    try? context.save()
+                }
                 dismiss() // dismisses editprojectview
             }
         }

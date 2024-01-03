@@ -33,6 +33,7 @@ struct ProjectListView: View {
                             VStack(alignment: .leading, spacing: 26) {
                                 ForEach(projects) { p in
                                     ProjectCardView(project: p)
+                                        .transition(.scale) // another animation
                                         .onTapGesture {
                                             // Change sleected project, triggers .navigationDestination bellow
                                             selectedProject = p
