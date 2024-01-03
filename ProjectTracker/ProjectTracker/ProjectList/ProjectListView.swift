@@ -13,6 +13,7 @@ struct ProjectListView: View {
     // private as only needs to be used in ProjectListView and children of ProjectListView
     @State private var newProject: Project?
     @Query private var projects: [Project]
+    @State private var selectedProject: Project?
     
     var body: some View {
         NavigationStack {
@@ -28,13 +29,17 @@ struct ProjectListView: View {
                     ScrollView (showsIndicators: false) {
                         VStack(alignment: .leading, spacing: 26) {
                             ForEach(projects) { p in
+                                ProjectCardView(project: p)
+                                    .onTapGesture {
+                                        // Change sleected project, triggers .navigationDestination bellow
+                                        selectedProject = p
+                                    }
+                                // Long press to delete
+                                    .onLongPressGesture {
+                                        newProject = p
+                                    }
+                                    
                                 
-                                NavigationLink {
-                                    ProjectDetailView(project: p)
-                                } label: {
-                                    ProjectCardView(project: p)
-                                }
-                                .buttonStyle(.plain)
 
                                 
                             }
@@ -67,9 +72,17 @@ struct ProjectListView: View {
                 
                 
             }
+            .navigationDestination(item: $selectedProject, destination: { project in
+                ProjectDetailView(project: project)
+            })
         }
         .sheet(item: $newProject) { project in
-            AddProjectView(project: project)
+            
+            
+            // If project has a name then editmode is true
+            let isEdit = project.name.trimmingCharacters(in: .whitespacesAndNewlines) != ""
+            
+            EditProjectView(project: project, isEditMode: isEdit)
                 .presentationDetents([.fraction(0.2)])
         }
     }

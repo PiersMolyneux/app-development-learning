@@ -16,7 +16,7 @@
 		41CB77902B444F640078A25A /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB778F2B444F640078A25A /* FontHelper.swift */; };
 		41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77942B44673E0078A25A /* StatBubbleView.swift */; };
 		41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77962B446AFE0078A25A /* ProjectCardView.swift */; };
-		41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* AddProjectView.swift */; };
+		41CB77992B447E8A0078A25A /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* EditProjectView.swift */; };
 		41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779B2B44A7960078A25A /* ProjectDetailView.swift */; };
 		41CB779E2B44B6380078A25A /* ProjectUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */; };
 		41CB77A02B455EE10078A25A /* AddUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779F2B455EE10078A25A /* AddUpdateView.swift */; };
@@ -35,7 +35,7 @@
 		41CB778F2B444F640078A25A /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		41CB77942B44673E0078A25A /* StatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatBubbleView.swift; path = ../../StatBubbleView.swift; sourceTree = "<group>"; };
 		41CB77962B446AFE0078A25A /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
-		41CB77982B447E8A0078A25A /* AddProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		41CB77982B447E8A0078A25A /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		41CB779B2B44A7960078A25A /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUpdateView.swift; sourceTree = "<group>"; };
 		41CB779F2B455EE10078A25A /* AddUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateView.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				41CB777D2B41901E0078A25A /* ProjectListView.swift */,
 				41CB77942B44673E0078A25A /* StatBubbleView.swift */,
 				41CB77962B446AFE0078A25A /* ProjectCardView.swift */,
-				41CB77982B447E8A0078A25A /* AddProjectView.swift */,
+				41CB77982B447E8A0078A25A /* EditProjectView.swift */,
 			);
 			path = ProjectList;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 				41CB77952B44673E0078A25A /* StatBubbleView.swift in Sources */,
 				41CB77A42B4570BC0078A25A /* EditFocusView.swift in Sources */,
 				41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */,
-				41CB77992B447E8A0078A25A /* AddProjectView.swift in Sources */,
+				41CB77992B447E8A0078A25A /* EditProjectView.swift in Sources */,
 				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
 				41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */,
