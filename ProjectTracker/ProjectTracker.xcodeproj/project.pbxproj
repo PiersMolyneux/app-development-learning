@@ -19,7 +19,7 @@
 		41CB77992B447E8A0078A25A /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77982B447E8A0078A25A /* EditProjectView.swift */; };
 		41CB779C2B44A7960078A25A /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779B2B44A7960078A25A /* ProjectDetailView.swift */; };
 		41CB779E2B44B6380078A25A /* ProjectUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */; };
-		41CB77A02B455EE10078A25A /* AddUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779F2B455EE10078A25A /* AddUpdateView.swift */; };
+		41CB77A02B455EE10078A25A /* EditUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB779F2B455EE10078A25A /* EditUpdateView.swift */; };
 		41CB77A22B456BAD0078A25A /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77A12B456BAD0078A25A /* DateHelper.swift */; };
 		41CB77A42B4570BC0078A25A /* EditFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB77A32B4570BC0078A25A /* EditFocusView.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 		41CB77982B447E8A0078A25A /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		41CB779B2B44A7960078A25A /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectUpdateView.swift; sourceTree = "<group>"; };
-		41CB779F2B455EE10078A25A /* AddUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUpdateView.swift; sourceTree = "<group>"; };
+		41CB779F2B455EE10078A25A /* EditUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUpdateView.swift; sourceTree = "<group>"; };
 		41CB77A12B456BAD0078A25A /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		41CB77A32B4570BC0078A25A /* EditFocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFocusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +126,7 @@
 			children = (
 				41CB779B2B44A7960078A25A /* ProjectDetailView.swift */,
 				41CB779D2B44B6380078A25A /* ProjectUpdateView.swift */,
-				41CB779F2B455EE10078A25A /* AddUpdateView.swift */,
+				41CB779F2B455EE10078A25A /* EditUpdateView.swift */,
 				41CB77A32B4570BC0078A25A /* EditFocusView.swift */,
 			);
 			path = ProjectDetail;
@@ -214,7 +214,7 @@
 				41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */,
 				41CB77A22B456BAD0078A25A /* DateHelper.swift in Sources */,
 				41CB778B2B4191E30078A25A /* Project.swift in Sources */,
-				41CB77A02B455EE10078A25A /* AddUpdateView.swift in Sources */,
+				41CB77A02B455EE10078A25A /* EditUpdateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

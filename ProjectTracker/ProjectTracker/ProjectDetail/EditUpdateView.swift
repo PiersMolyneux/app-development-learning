@@ -7,16 +7,18 @@
 
 import SwiftUI
 
-struct AddUpdateView: View {
+struct EditUpdateView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
     
     var project: Project
     var update: ProjectUpdate
+    var isEditMode: Bool
     
     @State private var headline: String = ""
     @State private var summary: String = ""
     @State private var hours: String = ""
+    @State private var showConfirmation = false
     
     var body: some View {
         ZStack {
@@ -25,7 +27,7 @@ struct AddUpdateView: View {
                 .ignoresSafeArea()
             
             VStack (alignment: .leading) {
-                Text("New Update")
+                Text(isEditMode ? "Edit Update" : "New Update")
                     .foregroundStyle(.white)
                     .font(.bigHeadline)
                 
@@ -43,17 +45,33 @@ struct AddUpdateView: View {
                         .keyboardType(.numberPad)
                         .frame(width: 60)
                     
-                    Button("Save") {
-                        // Save project update
+                    // Do updates
+                    Button(isEditMode ? "Save" : "Add") {
+                        
+                        // Edit or save updates
                         update.headline = headline
                         update.summary = summary
                         update.hours = Double(hours)! // force unwrap bc should be able to convert
-                        project.updates.insert(update, at: 0)
-                        
+                        // edit project update
+                        if !isEditMode {
+                            // Add project update if not edit mode
+                            project.updates.insert(update, at: 0)
+                        }
                         dismiss()
+                        
                     }
                     .buttonStyle(.borderedProminent)
                     .tint(.blue)
+                    
+                    // Add delete button if editmode
+                    if isEditMode {
+                        Button("Delete") {
+                            // Show confirmation dialog
+                            showConfirmation = true
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.red)
+                    }
                 }
                 
 
@@ -63,6 +81,22 @@ struct AddUpdateView: View {
             .padding(.horizontal)
             .padding(.top)
             Spacer()
+            
+        }
+        .confirmationDialog("Really delete the update?", isPresented: $showConfirmation) {
+            Button("Yes, delete it") {
+                // Search for the update in update list by its id, remove all updates with same id (should be unique)
+                project.updates.removeAll { u in
+                    u.id == update.id
+                }
+                dismiss()
+            }
+            
+        }
+        .onAppear {
+            headline = update.headline
+            summary = update.summary
+            hours = String(Int(update.hours))
             
         }
     }
