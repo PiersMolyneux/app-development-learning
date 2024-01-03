@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		419D336B2B45A08900639DF9 /* StatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D336A2B45A08900639DF9 /* StatHelper.swift */; };
 		41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB777B2B41901E0078A25A /* ProjectTrackerApp.swift */; };
 		41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CB777D2B41901E0078A25A /* ProjectListView.swift */; };
 		41CB77802B4190200078A25A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41CB777F2B4190200078A25A /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		419D336A2B45A08900639DF9 /* StatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatHelper.swift; sourceTree = "<group>"; };
 		41CB77782B41901E0078A25A /* ProjectTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41CB777B2B41901E0078A25A /* ProjectTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTrackerApp.swift; sourceTree = "<group>"; };
 		41CB777D2B41901E0078A25A /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				41CB778F2B444F640078A25A /* FontHelper.swift */,
 				41CB77A12B456BAD0078A25A /* DateHelper.swift */,
+				419D336A2B45A08900639DF9 /* StatHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				41CB77992B447E8A0078A25A /* EditProjectView.swift in Sources */,
 				41CB77902B444F640078A25A /* FontHelper.swift in Sources */,
 				41CB777E2B41901E0078A25A /* ProjectListView.swift in Sources */,
+				419D336B2B45A08900639DF9 /* StatHelper.swift in Sources */,
 				41CB777C2B41901E0078A25A /* ProjectTrackerApp.swift in Sources */,
 				41CB779E2B44B6380078A25A /* ProjectUpdateView.swift in Sources */,
 				41CB77972B446AFE0078A25A /* ProjectCardView.swift in Sources */,

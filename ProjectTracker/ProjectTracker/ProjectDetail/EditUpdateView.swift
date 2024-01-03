@@ -48,6 +48,7 @@ struct EditUpdateView: View {
                     // Do updates
                     Button(isEditMode ? "Save" : "Add") {
                         
+                        let hoursDifference = update.hours - Double(hours)!
                         // Edit or save updates
                         update.headline = headline
                         update.summary = summary
@@ -56,6 +57,16 @@ struct EditUpdateView: View {
                         if !isEditMode {
                             // Add project update if not edit mode
                             project.updates.insert(update, at: 0)
+                            
+                            // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
+                            try? context.save()
+                            StatHelper.updateAdded(project: project, update: update)
+                        }
+                        else {
+                            // edit project update
+                            
+                            // update stats
+                            StatHelper.updateEdited(project: project, hoursDifference: hoursDifference)
                         }
                         dismiss()
                         
@@ -89,6 +100,10 @@ struct EditUpdateView: View {
                 project.updates.removeAll { u in
                     u.id == update.id
                 }
+                // Force a SwiftData save, otherwise autosave may occur after the edit, and order matters here
+                try? context.save()
+                // Delete update
+                StatHelper.updateDeleted(project: project, update: update)
                 dismiss()
             }
             
