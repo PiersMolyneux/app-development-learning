@@ -23,10 +23,10 @@ struct ProjectCardView: View {
                     
                 HStack (alignment: .center, spacing: 13) {
                     Spacer()
-                    StatBubbleView(title: "Hours", stat: String(project.hours), startColor: Color("Navy"), endColor: Color("BlueA"))
-                    StatBubbleView(title: "Sessions", stat: String(project.sessions), startColor: Color("GreenA"), endColor: Color("Lime"))
-                    StatBubbleView(title: "Updates", stat: String(project.updates.count), startColor: Color("Maroon"), endColor: Color("PurpleA"))
-                    StatBubbleView(title: "Wins", stat: String(project.wins), startColor: Color("Maroon"), endColor: Color("Olive"))
+                    StatBubbleView(title: "Hours", stat: project.hours, startColor: Color("Navy"), endColor: Color("BlueA"))
+                    StatBubbleView(title: "Sessions", stat: Double(project.sessions), startColor: Color("GreenA"), endColor: Color("Lime"))
+                    StatBubbleView(title: "Updates", stat: Double(project.updates.count), startColor: Color("Maroon"), endColor: Color("PurpleA"))
+                    StatBubbleView(title: "Wins", stat: Double(project.wins), startColor: Color("Maroon"), endColor: Color("Olive"))
                     Spacer()
 
                 }

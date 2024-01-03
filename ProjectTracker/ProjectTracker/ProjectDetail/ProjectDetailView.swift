@@ -40,10 +40,10 @@ struct ProjectDetailView: View {
                     
                     HStack (alignment: .center, spacing: 13) {
                         Spacer()
-                        StatBubbleView(title: "Hours", stat: String(project.hours), startColor: Color("Navy"), endColor: Color("BlueA"))
-                        StatBubbleView(title: "Sessions", stat: String(project.sessions), startColor: Color("GreenA"), endColor: Color("Lime"))
-                        StatBubbleView(title: "Updates", stat: String(project.updates.count), startColor: Color("Maroon"), endColor: Color("PurpleA"))
-                        StatBubbleView(title: "Wins", stat: String(project.wins), startColor: Color("Maroon"), endColor: Color("Olive"))
+                        StatBubbleView(title: "Hours", stat: project.hours, startColor: Color("Navy"), endColor: Color("BlueA"))
+                        StatBubbleView(title: "Sessions", stat: Double(project.sessions), startColor: Color("GreenA"), endColor: Color("Lime"))
+                        StatBubbleView(title: "Updates", stat: Double(project.updates.count), startColor: Color("Maroon"), endColor: Color("PurpleA"))
+                        StatBubbleView(title: "Wins", stat: Double(project.wins), startColor: Color("Maroon"), endColor: Color("Olive"))
                         Spacer()
                     }
                     Text("My current focus is...")
@@ -79,26 +79,45 @@ struct ProjectDetailView: View {
                     .ignoresSafeArea())
                     
                 
-                // Project updates
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 27) {
-                        ForEach(project.updates.sorted(by: { u1, u2 in
-                            u1.date > u2.date
-                        })) { update in
-                            ProjectUpdateView(update: update)
-                            // add ontap gesture so tap gets captured and screen knows we are scrolling, otherwise we cannot use scroll view
-                                .onTapGesture {
-                                }
-                            // edit project update by setting update to existing update so it knows there has been a changed
-                                .onLongPressGesture {
-                                    newUpdate = update
-                                }
+                // Project updates. If  updates then look
+                if project.updates.count > 0 {
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 27) {
+                            ForEach(project.updates.sorted(by: { u1, u2 in
+                                u1.date > u2.date
+                            })) { update in
+                                ProjectUpdateView(update: update)
+                                // add ontap gesture so tap gets captured and screen knows we are scrolling, otherwise we cannot use scroll view
+                                    .onTapGesture {
+                                    }
+                                // edit project update by setting update to existing update so it knows there has been a changed
+                                    .onLongPressGesture {
+                                        newUpdate = update
+                                    }
+                            }
+                            
                         }
-
+                        .padding()
+                        .padding(.bottom, 80)
+                        
                     }
-                    .padding()
-                    .padding(.bottom, 80)
+                }
+                
+                // if no previous updates, prompt user for update
+                else {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button("Tap to add a new project update") {
+                            newUpdate = ProjectUpdate()
+                        }
+                        .buttonStyle(.bordered)
+                        .foregroundStyle(.white)
+                        .padding(.bottom, 100)
+                        Spacer()
+                    }
                     
+                    Spacer()
                 }
             }
             

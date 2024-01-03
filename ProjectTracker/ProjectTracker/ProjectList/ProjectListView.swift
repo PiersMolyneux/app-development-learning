@@ -26,27 +26,46 @@ struct ProjectListView: View {
                         .font(Font.screenHeading)
                         .foregroundStyle(Color.white)
                     
-                    ScrollView (showsIndicators: false) {
-                        VStack(alignment: .leading, spacing: 26) {
-                            ForEach(projects) { p in
-                                ProjectCardView(project: p)
-                                    .onTapGesture {
-                                        // Change sleected project, triggers .navigationDestination bellow
-                                        selectedProject = p
-                                    }
-                                // Long press to delete
-                                    .onLongPressGesture {
-                                        newProject = p
-                                    }
+                    
+                    // If there are already projects
+                    if projects.count > 0 {
+                        ScrollView (showsIndicators: false) {
+                            VStack(alignment: .leading, spacing: 26) {
+                                ForEach(projects) { p in
+                                    ProjectCardView(project: p)
+                                        .onTapGesture {
+                                            // Change sleected project, triggers .navigationDestination bellow
+                                            selectedProject = p
+                                        }
+                                    // Long press to delete
+                                        .onLongPressGesture {
+                                            newProject = p
+                                        }
                                     
-                                
-
+                                    
+                                    
+                                    
+                                }
                                 
                             }
-                            
                         }
                     }
                     
+                    // If no projects
+                    else {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button("Tap to add a new project") {
+                                newProject = Project()
+                            }
+                            .buttonStyle(.bordered)
+                            .foregroundStyle(.white)
+                            Spacer()
+                        }
+                        
+                        Spacer()
+                    }
                     
                     
                 }
