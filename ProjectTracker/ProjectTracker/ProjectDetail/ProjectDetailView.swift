@@ -11,6 +11,7 @@ struct ProjectDetailView: View {
     
     @Environment(\.dismiss) private var dismiss
     var project: Project
+    @State private var update: ProjectUpdate? // state bc we need to change it, private as it does not need to be accessed by project list view
     
     var body: some View {
         
@@ -64,10 +65,9 @@ struct ProjectDetailView: View {
                 // Project updates
                 ScrollView(showsIndicators: false) {
                     VStack(spacing: 27) {
-                        ProjectUpdateView()
-                        ProjectUpdateView()
-                        ProjectUpdateView()
-                        ProjectUpdateView()
+                        ForEach(project.updates) { update in
+                            ProjectUpdateView(update: update)
+                        }
 
                     }
                     .padding()
@@ -81,7 +81,8 @@ struct ProjectDetailView: View {
                 Spacer()
                 HStack {
                     Button {
-                        // Todo: Add project update
+                        self.update = ProjectUpdate()
+                        
                     } label: {
                         ZStack {
                             Circle()
@@ -111,6 +112,10 @@ struct ProjectDetailView: View {
 
         }
         .navigationBarBackButtonHidden(true)
+        .sheet(item: $update) { update in
+            AddUpdateView(project: project, update: update)
+                .presentationDetents([.fraction(0.3)])
+        }
     }
     
     
